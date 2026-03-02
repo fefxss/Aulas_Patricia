@@ -10,7 +10,7 @@ public class Exercicio02 {
         double nota1[] = new double[numeroMaximo];
         double nota2[] = new double[numeroMaximo];
 
-        entradaDados(rm,nota1,nota2);
+        int numeroAlunos = entradaDados(rm,nota1,nota2);
 
         //Os dados foram devolvidos sem precisar utilizar return no método abaixo
         for (int i = 0; i < 2; i++) {
@@ -18,7 +18,7 @@ public class Exercicio02 {
         }
     }
 
-    public static void entradaDados(int[] rm, double[] nota1, double[] nota2){
+    public static int entradaDados(int[] rm, double[] nota1, double[] nota2){
 
         Scanner entrada = new Scanner(System.in);
 
@@ -38,5 +38,6 @@ public class Exercicio02 {
             System.out.println("Digite o RM do aluno:");
             rmLido = entrada.nextInt();
         }
+        return numeroAlunos;
     }
 }
