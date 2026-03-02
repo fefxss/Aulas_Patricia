@@ -10,18 +10,44 @@ public class Exercicio02 {
         double nota1[] = new double[numeroMaximo];
         double nota2[] = new double[numeroMaximo];
 
+        //Entrada de Dados
         int numeroAlunos = entradaDados(rm,nota1,nota2);
 
-        //Os dados foram devolvidos sem precisar utilizar return no método abaixo
+        //Os dados foram devolvidos sem precisar utilizar return no metodo
         for (int i = 0; i < 2; i++) {
             System.out.println("RM: "+ rm[i]);
         }
 
+        // Media
         double media[] = new double[numeroAlunos];
+
         calcularMedia(numeroAlunos, nota1, nota2, media);
         for (int i = 0; i < numeroAlunos; i++) {
             System.out.println("RM: " + rm[i] + "\t media: " + media[i]);
         }
+
+        //Aprovados
+        int aprovados[] = new int[numeroAlunos];
+        int numeroAprovado = gerarListaAprovados(numeroAlunos, rm, media, aprovados);
+
+
+        System.out.println("\n **** Alunos aprovados ****");
+        for (int i = 0; i < numeroAprovado; i++) {
+            System.out.println(aprovados[i]);
+        }
+
+    }
+
+    public static int gerarListaAprovados(int numeroAlunos, int[] rm, double[] media, int[] aprovados){
+        int numeroAprovado = 0;
+        for (int i = 0; i < numeroAlunos; i++) {
+            if (media[i]>=6){
+                aprovados[numeroAprovado] = rm[i];
+                numeroAprovado++;
+            }
+        }
+
+        return numeroAprovado;
     }
 
     public static void calcularMedia(int numeroAlunos, double[] nota1, double[] nota2, double[] media){
