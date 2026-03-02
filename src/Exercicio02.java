@@ -16,6 +16,18 @@ public class Exercicio02 {
         for (int i = 0; i < 2; i++) {
             System.out.println("RM: "+ rm[i]);
         }
+
+        double media[] = new double[numeroAlunos];
+        calcularMedia(numeroAlunos, nota1, nota2, media);
+        for (int i = 0; i < numeroAlunos; i++) {
+            System.out.println("RM: " + rm[i] + "\t media: " + media[i]);
+        }
+    }
+
+    public static void calcularMedia(int numeroAlunos, double[] nota1, double[] nota2, double[] media){
+        for (int i = 0; i < numeroAlunos; i++) {
+            media[i] = (nota1[i] + nota2[i]) / 2;
+        }
     }
 
     public static int entradaDados(int[] rm, double[] nota1, double[] nota2){
