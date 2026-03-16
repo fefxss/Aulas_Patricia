@@ -1,4 +1,4 @@
-package ExercicioFixacao;
+package ExercicioFixacao1;
 
 import java.util.Scanner;
 
