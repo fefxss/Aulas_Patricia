@@ -19,6 +19,8 @@ public class PilhaMain {
             pilha.push(66);
             pilha.push(77);
 
+
+
             pilha.isFull();
 
             pilha.pop();
